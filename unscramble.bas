@@ -1,0 +1,35 @@
+ 10 OPEN 4,4
+ 20 POKE 53280,0:
+    POKE 53281,0:
+    POKE 646,1
+100 INPUT "WORD";WD$
+110 N=LEN(WD$):
+    R=LEN(WD$)
+120 FOR A=N-1 TO (N-(R-1)) STEP-1
+130   N=N*A
+140 NEXT
+150 PRINT N "PERMUTATIONS."
+160 DIM A$(LEN(WD$))
+170 FOR A=0 TO LEN(WD$)-1
+180   A$(A)=MID$(WD$,A+1,1)
+190 NEXT
+200 DIM CK$(N)
+210 DIM C$(LEN(WD$)-1)
+220 FOR LO=1 TO N
+230   FOR C=0 TO LEN(WD$)-1:
+        C$(C)="N":
+      NEXT
+240   FOR L1=1 TO LEN(WD$)
+250     RN=INT(RND(1)*LEN(WD$)):
+        IF C$(RN)="Y" THEN 250
+260     ST$=ST$+A$(RN):
+        C$(RN)="Y"
+270   NEXT
+280   FOR S=1 TO LO
+290    IF ST$=CK$(S) THEN ST$="":
+       GOTO 230
+300   NEXT
+310   CK$(LO)=ST$
+320   PRINT ST$,:
+      ST$=""
+330 NEXT
