@@ -6,3 +6,8 @@ I'm not sure how to make these readable vs drag and drop to your favorite emulat
 The primary purpose of this repo is contemplation, so getting things to work might require a bit of effort on your part. There's a good possibility I will change my mind about including extra linebreaks...
 
 Bug reports will be found amusing, but also considered seriously.
+
+Oh hey, I've discovered `petcat`
+
+`$ petcat -2 -qc < basic.prg > basic.bas`
+
